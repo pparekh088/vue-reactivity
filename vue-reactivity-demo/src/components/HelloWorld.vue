@@ -10,8 +10,13 @@ export default {
   name: 'HelloWorld',
   data(){
     return{
-      token: reactive(sessionStorage.getItem('token'))
+     sessionToken: sessionStorage.getItem('token')
     }  
+  },
+  computed:{
+    token(){
+      return reactive(sessionStorage.getItem('token'))
+    }
   },
   props: {
     msg: String
